@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Avisos · ACG Rosalía de Castro</title>
+<link rel="stylesheet" href="../calendar/style.css">
+<link rel="stylesheet" href="avisos.css">
+</head>
+<body>
+<main id="app">
+  <div class="admin-bar" id="adminBar" hidden>
+    <span>Modo publicación activo</span>
+    <button class="link-btn" id="adminExit">Salir</button>
+  </div>
+  <div class="notif-bar" id="notifBar" hidden>
+    <p>Las notificaciones están desactivadas. Actívalas para enterarte de los avisos nuevos.</p>
+    <button class="btn" id="notifOn">Activar notificaciones</button>
+  </div>
+  <button class="btn secondary compose" id="composeBtn">
+    <svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M180-180h44l472-471-44-44-472 471v44Zm-30 60q-13 0-21.5-8.5T120-150v-73q0-12 5-23.5t13-19.5l557-556q8-8 19-12.5t23-4.5q11 0 22 4.5t20 12.5l44 44q9 9 13 20t4 22q0 11-4.5 22.5T823-694L266-138q-8 8-19.5 13t-23.5 5h-73Zm629-617-41-41 41 41Zm-105 64-22-22 44 44-22-22Z"/></svg>
+    <span>Publicar un aviso</span>
+  </button>
+
+  <section class="hero quiet" id="stateBox" hidden></section>
+  <ol class="avisos" id="list"></ol>
+  <footer class="status" id="status"></footer>
+</main>
+
+<div class="sheet-backdrop" id="backdrop" hidden>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <div class="sheet-grip" aria-hidden="true"></div>
+    <button class="icon-btn sheet-close" id="sheetClose" aria-label="Cerrar">
+      <svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z"/></svg>
+    </button>
+    <h2 id="sheetTitle"></h2>
+
+    <!-- 1. Contraseña de publicación -->
+    <form class="pane" id="pinPane" hidden autocomplete="off">
+      <p class="hint">Solo para la junta. Escribe la contraseña de publicación.</p>
+      <label for="pinInput">Contraseña</label>
+      <input id="pinInput" type="password" inputmode="numeric" autocomplete="off" maxlength="32">
+      <p class="err" id="pinErr" role="alert"></p>
+      <button class="btn wide" type="submit" id="pinOk">Continuar</button>
+      <button class="link-btn center" type="button" id="toChange">Cambiar la contraseña</button>
+    </form>
+
+    <!-- 2. Escribir aviso -->
+    <form class="pane" id="composePane" hidden autocomplete="off">
+      <label for="titleInput">Título</label>
+      <input id="titleInput" type="text" maxlength="120" autocapitalize="sentences" placeholder="Por ejemplo: Cambio de horario del ensayo">
+      <label for="textInput">Texto</label>
+      <textarea id="textInput" rows="6" maxlength="4000" autocapitalize="sentences"></textarea>
+      <p class="hint small">Todos los socios con la app recibirán una notificación.</p>
+      <p class="err" id="composeErr" role="alert"></p>
+      <button class="btn wide" type="submit" id="composeOk">Publicar aviso</button>
+    </form>
+
+    <!-- 3. Cambiar contraseña -->
+    <form class="pane" id="changePane" hidden autocomplete="off">
+      <p class="hint">Para cambiar la contraseña de publicación hace falta la clave maestra.</p>
+      <label for="masterInput">Clave maestra</label>
+      <input id="masterInput" type="password" autocomplete="off" maxlength="64">
+      <label for="newPin">Nueva contraseña de publicación</label>
+      <input id="newPin" type="password" inputmode="numeric" autocomplete="off" maxlength="32">
+      <label for="newPin2">Repite la nueva contraseña</label>
+      <input id="newPin2" type="password" inputmode="numeric" autocomplete="off" maxlength="32">
+      <p class="err" id="changeErr" role="alert"></p>
+      <button class="btn wide" type="submit" id="changeOk">Cambiar contraseña</button>
+    </form>
+
+    <!-- 4. Retirar aviso -->
+    <div class="pane" id="removePane" hidden>
+      <p class="hint" id="removeText"></p>
+      <p class="err" id="removeErr" role="alert"></p>
+      <div class="sheet-actions">
+        <button class="btn secondary" type="button" id="removeCancel">Cancelar</button>
+        <button class="btn danger" type="button" id="removeOk">Retirar aviso</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="../config.js"></script>
+<script src="../bridge.js"></script>
+<script src="avisos.js"></script>
+</body>
+</html>

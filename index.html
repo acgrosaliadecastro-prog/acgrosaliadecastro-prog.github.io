@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ACG Rosalía">
+<meta name="theme-color" content="#13295E">
+<meta name="description" content="Calendario, avisos y documentos de la Asociación Cultural Galega Rosalía de Castro">
+<title>ACG Rosalía de Castro</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="shell.css">
+<script src="config.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="titles">
+    <h1 id="title">Calendario</h1>
+    <p class="sub"><span id="subLock" hidden><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M220-80q-24.75 0-42.37-17.63Q160-115.25 160-140v-434q0-24.75 17.63-42.38Q195.25-634 220-634h70v-96q0-78.85 55.61-134.42Q401.21-920 480.11-920q78.89 0 134.39 55.58Q670-808.85 670-730v96h70q24.75 0 42.38 17.62Q800-598.75 800-574v434q0 24.75-17.62 42.37Q764.75-80 740-80H220Zm314.5-222.03Q557-324.06 557-355q0-30-22.67-54.5t-54.5-24.5q-31.83 0-54.33 24.5t-22.5 55q0 30.5 22.67 52.5t54.5 22q31.83 0 54.33-22.03ZM350-634h260v-96q0-54.17-37.88-92.08-37.88-37.92-92-37.92T388-822.08q-38 37.91-38 92.08v96Z"/></svg></span><span id="subtitle">ACG Rosalía de Castro</span></p>
+  </div>
+  <button class="top-btn" id="refresh" aria-label="Actualizar"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-160q-133 0-226.5-93.5T160-480q0-133 93.5-226.5T480-800q85 0 149 34.5T740-671v-99q0-13 8.5-21.5T770-800q13 0 21.5 8.5T800-770v194q0 13-8.5 21.5T770-546H576q-13 0-21.5-8.5T546-576q0-13 8.5-21.5T576-606h138q-38-60-97-97t-137-37q-109 0-184.5 75.5T220-480q0 109 75.5 184.5T480-220q75 0 140-39.5T717-366q5-11 16.5-16.5t22.5-.5q12 5 16 16.5t-1 23.5q-39 84-117.5 133.5T480-160Z"/></svg></button>
+</header>
+
+<main class="panes">
+  <iframe id="pane-cal" class="pane" src="calendar/index.html" title="Calendario"></iframe>
+  <iframe id="pane-av" class="pane" src="avisos/index.html" title="Avisos" hidden></iframe>
+  <section id="pane-docs" class="pane docs" hidden>
+    <div class="docs-card">
+      <div class="docs-icon"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12.44 0 23.72 5t19.37 13.09L481-740h369q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H455l-60-60H140v520l90-355q5-20 21.83-32.5Q268.65-620 289-620h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Zm63-60h572l84-340H287l-84 340Zm-63-353v-167 167Zm63 353 84-340-84 340Z"/></svg></div>
+      <h2>Documentos de la asociación</h2>
+      <p>La carpeta se abre en OneDrive en modo solo lectura: puedes ver y descargar los archivos, pero no modificarlos.</p>
+      <a class="btn" id="openDocs" href="#" target="_blank" rel="noopener"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12.44 0 23.72 5t19.37 13.09L481-740h369q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H455l-60-60H140v520l90-355q5-20 21.83-32.5Q268.65-620 289-620h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Zm63-60h572l84-340H287l-84 340Zm-63-353v-167 167Zm63 353 84-340-84 340Z"/></svg><span>Abrir la carpeta</span></a>
+      <p class="tip">Para guardar un archivo en el iPhone, ábrelo y pulsa Compartir y después «Guardar en Archivos».</p>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs" aria-label="Secciones">
+  <button class="tab" data-tab="cal" id="tab-cal">
+    <span class="pill"><svg viewBox="0 -960 960 960" aria-hidden="true" class="off"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Zm300 230q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg><svg viewBox="0 -960 960 960" aria-hidden="true" class="on"><path d="M180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9-22.8 9-9.2 23.02-9.2t23.5 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm300-260q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg></span><span class="lb">Calendario</span>
+  </button>
+  <button class="tab" data-tab="avisos" id="tab-avisos">
+    <span class="pill"><svg viewBox="0 -960 960 960" aria-hidden="true" class="off"><path d="M850-450h-90q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h90q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5ZM677-274q8-10 19.83-12 11.82-2 22.17 6l73 54q10 8 12 19.83 2 11.82-6 22.17-8 10-19.83 12-11.82 2-22.17-6l-73-54q-10-8-12-19.83-2-11.82 6-22.17Zm115-460-70 53q-10.35 8-22.17 6Q688-677 680-687q-8-10-6-22t12-20l70-53q10.35-8 22.17-6Q790-786 798-776q8 10 6 22t-12 20ZM210-360h-70q-24.75 0-42.37-17.63Q80-395.25 80-420v-120q0-24.75 17.63-42.38Q115.25-600 140-600h180l155-93q15-9 30-.06 15 8.93 15 26.06v374q0 17.13-15 26.06-15 8.94-30-.06l-155-93h-50v130q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-130Zm250 14v-268l-124 74H140v120h196l124 74Zm100 0v-268q27 24 43.5 58.5T620-480q0 41-16.5 75.5T560-346ZM300-480Z"/></svg><svg viewBox="0 -960 960 960" aria-hidden="true" class="on"><path d="M850-450h-90q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h90q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5ZM677-274q8-10 19.83-12 11.82-2 22.17 6l73 54q10 8 12 19.83 2 11.82-6 22.17-8 10-19.83 12-11.82 2-22.17-6l-73-54q-10-8-12-19.83-2-11.82 6-22.17Zm115-460-70 53q-10.35 8-22.17 6Q688-677 680-687q-8-10-6-22t12-20l70-53q10.35-8 22.17-6Q790-786 798-776q8 10 6 22t-12 20ZM210-360h-70q-24.75 0-42.37-17.63Q80-395.25 80-420v-120q0-24.75 17.63-42.38Q115.25-600 140-600h180l155-93q15-9 30-.06 15 8.93 15 26.06v374q0 17.13-15 26.06-15 8.94-30-.06l-155-93h-50v130q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63-8.5-8.62-8.5-21.37v-130Zm350 14v-268q27 24 43.5 58.5T620-480q0 41-16.5 75.5T560-346Z"/></svg><span class="badge" id="badge" hidden></span></span><span class="lb">Avisos</span>
+  </button>
+  <button class="tab" data-tab="docs" id="tab-docs">
+    <span class="pill"><svg viewBox="0 -960 960 960" aria-hidden="true" class="off"><path d="M140-160q-24 0-42-18.5T80-220v-520q0-23 18-41.5t42-18.5h256q12.44 0 23.72 5t19.37 13.09L481-740h339q23 0 41.5 18.5T880-680v460q0 23-18.5 41.5T820-160H140Zm0-60h680v-460H456l-60-60H140v520Zm0 0v-520 520Z"/></svg><svg viewBox="0 -960 960 960" aria-hidden="true" class="on"><path d="M140-160q-23 0-41.5-18.5T80-220v-520q0-23 18.5-41.5T140-800h256q12 0 23.5 5t19.5 13l42 42h369q13 0 21.5 8.5T880-710q0 13-8.5 21.5T850-680H289q-57 0-103 28t-46 79v353l90-355q5-20 22-32.5t37-12.5h574q29 0 47.5 23t10.5 52l-88 339q-6 24-22 35t-41 11H140Z"/></svg></span><span class="lb">Documentos</span>
+  </button>
+</nav>
+
+<div class="install" id="install" hidden>
+  <div class="install-sheet" role="dialog" aria-modal="true" aria-labelledby="installTitle">
+    <button class="install-close" id="installClose" aria-label="Cerrar"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z"/></svg></button>
+    <img class="install-icon" src="icons/icon-192.png" alt="" width="64" height="64">
+    <h2 id="installTitle">Instala la app en tu iPhone</h2>
+    <ol>
+      <li>Pulsa el botón Compartir <span class="ico"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M220-80q-24 0-42-18t-18-42v-469q0-24 18-42t42-18h139q12.75 0 21.38 8.68 8.62 8.67 8.62 21.5 0 12.82-8.62 21.32-8.63 8.5-21.38 8.5H220v469h520v-469H599q-12.75 0-21.37-8.68-8.63-8.67-8.63-21.5 0-12.82 8.63-21.32 8.62-8.5 21.37-8.5h141q24 0 42 18t18 42v469q0 24-18 42t-42 18H220Zm237.5-275.63Q449-364.25 449-377v-427l-67 67q-9 9-21 9t-21.39-9q-8.61-9-8.61-21.5t9-21.5l118-119q5-5 10.13-7 5.14-2 11-2 5.87 0 10.87 2 5 2 10 7l119 119q9 9 9 21.16t-8.61 21Q610-729 597.53-729q-12.46 0-21.53-9l-67-66v427q0 12.75-8.68 21.37-8.67 8.63-21.5 8.63-12.82 0-21.32-8.63Z"/></svg></span> en la barra de Safari.</li>
+      <li>Elige «Añadir a pantalla de inicio» <span class="ico"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M450-450v140q0 12.75 8.68 21.37 8.67 8.63 21.5 8.63 12.82 0 21.32-8.63 8.5-8.62 8.5-21.37v-140h140q12.75 0 21.38-8.68 8.62-8.67 8.62-21.5 0-12.82-8.62-21.32-8.63-8.5-21.38-8.5H510v-140q0-12.75-8.68-21.38-8.67-8.62-21.5-8.62-12.82 0-21.32 8.62-8.5 8.63-8.5 21.38v140H310q-12.75 0-21.37 8.68-8.63 8.67-8.63 21.5 0 12.82 8.63 21.32 8.62 8.5 21.37 8.5h140ZM180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h600v-600H180v600Zm0-600v600-600Z"/></svg></span>.</li>
+      <li>Abre la app desde el nuevo icono.</li>
+    </ol>
+    <p class="install-note">Así la tendrás siempre a mano y recibirás las notificaciones de los avisos.</p>
+    <button class="btn wide" id="installOk">Entendido</button>
+  </div>
+</div>
+
+<script src="shell.js"></script>
+</body>
+</html>

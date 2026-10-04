@@ -1,0 +1,62 @@
+/* Avisos — se apoya en ../calendar/style.css (colores, letras, botones y fichas) */
+
+.compose { width: 100%; }
+.compose svg { width: 22px; height: 22px; }
+
+.admin-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--banda); color: var(--cobalto-hondo); border-radius: 12px;
+  padding: 4px 6px 4px 14px; margin-bottom: 12px; font-weight: 700;
+}
+
+.notif-bar {
+  background: var(--blanco); border: 1.5px solid var(--camelia); border-radius: 14px;
+  padding: 14px 16px; margin-bottom: 12px;
+}
+.notif-bar p { margin: 0 0 10px; color: var(--cobalto-hondo); }
+.notif-bar .btn { width: 100%; }
+
+#stateBox { margin-top: 16px; min-height: 0; }
+
+.avisos { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
+.aviso {
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px;
+  padding: 16px 16px 14px;
+}
+.aviso.nuevo { border-color: var(--camelia); box-shadow: inset 4px 0 0 var(--camelia); }
+.aviso .meta { display: flex; align-items: center; gap: 8px; color: var(--granito); font-size: 15px; }
+.aviso .chip {
+  font-weight: 700; font-size: 13px; color: var(--blanco); background: var(--camelia);
+  border-radius: 999px; padding: 1px 9px;
+}
+.aviso h2 {
+  font-family: var(--serif); font-weight: 700; font-size: 23px; line-height: 1.18;
+  margin: 6px 0 0; color: var(--cobalto-hondo); overflow-wrap: anywhere;
+}
+.aviso .texto { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--cobalto-hondo); }
+.aviso .texto a { color: var(--cobalto); font-weight: 700; }
+.aviso .remove {
+  margin-top: 10px; display: inline-flex; align-items: center; gap: 6px;
+  color: var(--camelia); font-weight: 700; font-size: 16px; min-height: 44px;
+}
+.aviso .remove svg { width: 20px; height: 20px; }
+
+/* Formularios de las fichas */
+.pane { display: flex; flex-direction: column; }
+.pane label { font-weight: 700; font-size: 15px; margin: 14px 0 6px; color: var(--cobalto-hondo); }
+.pane input, .pane textarea {
+  font: inherit; font-size: 18px; color: var(--cobalto-hondo);
+  border: 1.5px solid var(--linea); border-radius: 10px; background: var(--blanco);
+  padding: 11px 12px; width: 100%;
+}
+.pane input { min-height: 50px; }
+.pane textarea { resize: vertical; min-height: 140px; line-height: 1.4; }
+.pane input:focus, .pane textarea:focus { outline: none; border-color: var(--cobalto); box-shadow: 0 0 0 3px var(--banda); }
+.pane .hint { margin: 0; color: var(--granito); }
+.pane .hint.small { font-size: 15px; margin-top: 10px; }
+.pane .err { color: var(--camelia); font-weight: 700; margin: 10px 0 0; min-height: 1.45em; }
+.pane .err:empty { min-height: 0; margin: 0; }
+.pane .btn.wide { margin-top: 18px; width: 100%; }
+.pane .btn[disabled] { opacity: .6; }
+.link-btn.center { align-self: center; margin-top: 6px; }
+.btn.danger { background: var(--camelia); }
